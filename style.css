@@ -1,0 +1,169 @@
+  /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Default desktop styles */
+body {
+  font-size: 16px;
+  margin: 20px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .container {
+    flex-direction: column;
+    padding: 5px;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Header */
+        header {
+            background: #1727ff;
+            color: #fff;
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1rem;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 2rem;
+            margin-top: 60px; /* Account for fixed header */
+        }
+
+        #about {
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-top: 1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+            gap: 1rem;
+            text-align: center;
+        }
+
+        .skills-grid div {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project {
+            background: #fff;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Contact */
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #54d20b;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #057c23;
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+        }
+        #contact-btn{
+            background-color: #74ed1e;
+            margin: 8px;
+            margin-top: -3px;
+          border-radius: 2px solid black;
+        }
+        nav a {
+    color: #fff;
+    text-decoration: none;
+    transition: border-bottom 0.3s ease; /* Smooth transition for hover */
+}
+
+nav a:hover {
+    border-bottom: 2px solid #000000; /* Grey border on hover */
+}

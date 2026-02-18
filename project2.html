@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msvalidate.01" content="XXXXXXXXXXXXXXXXXXXXXXXX" />
+    <title>Elite Fitness Gym</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #fff;
+    background-color: #000;
+    scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+h1, h2, h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+}
+
+/* Header and Navbar */
+#header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ff0000;
+}
+
+#nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+#nav-menu li {
+    margin-left: 2rem;
+}
+
+#nav-menu a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+#nav-menu a:hover {
+    color: #ff0000;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Hero Section */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=800&fit=crop') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ff0000;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    padding: 8px;
+    margin: 8px;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Sections */
+section {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #ff0000;
+}
+
+/* About */
+#about p {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.service-card {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Pricing */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.pricing-card {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pricing-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 0, 0, 0.3);
+}
+
+.price {
+    font-size: 2rem;
+    color: #ff0000;
+    margin: 1rem 0;
+}
+
+/* Trainers */
+.trainers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.trainer-card {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.trainer-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+/* Testimonials */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background-color: #111;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Contact */
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #111;
+    color: #fff;
+}
+
+#contact-form button {
+    align-self: flex-start;
+}
+
+/* Footer */
+#footer {
+    background-color: #111;
+    padding: 2rem;
+    text-align: center;
+}
+
+.social-icons a {
+    color: #fff;
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ff0000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #navbar {
+        padding: 1rem;
+    }
+
+    #nav-menu {
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background-color: #000;
+        flex-direction: column;
+        overflow: hidden;
+        transition: height 0.3s;
+    }
+
+    #nav-menu.active {
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    #nav-menu li {
+        margin: 1rem 0;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .services-grid,
+    .pricing-grid,
+    .trainers-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Header with Sticky Navbar -->
+    <header id="header">
+        <nav id="navbar">
+            <div class="logo">Prime gym</div>
+            <ul id="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#trainers">Trainers</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <h1>Transform Your Body, Elevate Your Life</h1>
+            <p>Join the ultimate fitness experience with state-of-the-art equipment and expert guidance.</p>
+            <a href="#contact" class="cta-button">Join Now</a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>At Elite Fitness, we believe in empowering individuals to achieve their fitness goals through personalized training, cutting-edge facilities, and a supportive community. Our gym is more than a place to work out—it's where champions are made.</p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Weight Training</h3>
+                    <p>Build strength and muscle with our comprehensive weight training programs and equipment.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Cardio</h3>
+                    <p>Improve endurance and heart health with our variety of cardio machines and classes.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Personal Training</h3>
+                    <p>Get one-on-one guidance from certified trainers tailored to your fitness level and goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <h2>Membership Pricing</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>Basic</h3>
+                    <p class="price">699/month</p>
+                    <ul>
+                        <li>Access to gym equipment</li>
+                        <li>Cardio and weight areas</li>
+                        <li>Locker room access</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Sign Up</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Standard</h3>
+                    <p class="price">1400/ 2 month</p>
+                    <ul>
+                        <li>All Basic features</li>
+                        <li>Group classes</li>
+                        <li>Nutrition consultation</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Sign Up</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>Premium</h3>
+                    <p class="price">5500/ 6month</p>
+                    <ul>
+                        <li>All Standard features</li>
+                        <li>Personal training sessions</li>
+                        <li>Spa and recovery services</li>
+                    </ul>
+                    <a href="#contact" class="cta-button">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers">
+        <div class="container">
+            <h2>Meet Our Trainers</h2>
+            <div class="trainers-grid">
+                <div class="trainer-card">
+                    <img src="akshat.jpeg" alt="Trainer 1">
+                    <h3>Kunnal Soni</h3>
+                    <p>Certified personal trainer with 10+ years of experience in strength training.</p>
+                </div>
+                <div class="trainer-card">
+                    <img src="" alt="Trainer 2">
+                    <h3>......</h3>
+                    <p>Expert in cardio and HIIT workouts, helping clients achieve peak fitness.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container">
+            <h2>What Our Members Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"Elite Fitness changed my life! The trainers are amazing and the facilities are top-notch."</p>
+                    <cite>- </cite>
+                </div>
+                <div class="testimonial">
+                    <p>"I've never felt more motivated. The community here is incredible."</p>
+                    <cite>- </cite>
+                </div>
+                <div class="testimonial">
+                    <p>"Best investment I've made. Results speak for themselves!"</p>
+                    <cite>- </cite>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        
+            <h2>Contact Us</h2>
+           <!-- Contact Section -->
+<section id="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <form id="contact-form" action="https://formspree.io/f/xzdavbwr" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit" class="cta-button">Send Message</button>
+        </form>
+        <!-- Success Message Box -->
+        <div id="success-message" style="display: none; margin-top: 2rem; padding: 1rem; background-color: #ff0000; color: #fff; border-radius: 5px; text-align: center; font-weight: bold;">
+            Successful! Your message has been sent. We'll get back to you soon.
+        </div>
+    </div>
+</section>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="container">
+            <p>&copy; 2026 Prime gym. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
